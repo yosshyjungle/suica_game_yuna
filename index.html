@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スイカゲーム風パズルゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- ゲームタイトル -->
+        <header class="game-header">
+            <h1>🍉 スイカゲーム風パズル 🍉</h1>
+            <p>フルーツを合体させて大きなスイカを作ろう！</p>
+        </header>
+
+        <!-- ゲーム情報表示エリア -->
+        <div class="game-info">
+            <div class="score-display">
+                <span>スコア: </span>
+                <span id="score">0</span>
+            </div>
+            <div class="next-fruit-display">
+                <span>次のフルーツ: </span>
+                <canvas id="nextFruitCanvas" width="40" height="40"></canvas>
+            </div>
+        </div>
+
+        <!-- メインゲーム画面 -->
+        <div class="game-area">
+            <canvas id="gameCanvas" width="400" height="600"></canvas>
+            
+            <!-- ゲームオーバー画面 -->
+            <div id="gameOverScreen" class="game-over-screen hidden">
+                <div class="game-over-content">
+                    <h2>ゲームオーバー！</h2>
+                    <p>最終スコア: <span id="finalScore">0</span></p>
+                    <button id="restartButton" class="restart-button">もう一度プレイ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 操作方法説明 -->
+        <div class="controls-info">
+            <h3>操作方法</h3>
+            <ul>
+                <li>マウスを動かしてフルーツの落下位置を調整</li>
+                <li>クリック（またはタップ）でフルーツを落下</li>
+                <li>同じフルーツが2つ接触すると次のレベルに合体！</li>
+                <li>フルーツが上端を超えるとゲームオーバー</li>
+            </ul>
+        </div>
+
+        <!-- フルーツレベル説明 -->
+        <div class="fruit-levels">
+            <h3>フルーツレベル</h3>
+            <div class="fruit-level-list">
+                <div class="fruit-level">
+                    <div class="fruit-circle cherry">🍒</div>
+                    <span>さくらんぼ</span>
+                </div>
+                <div class="fruit-level">
+                    <div class="fruit-circle strawberry">🍓</div>
+                    <span>いちご</span>
+                </div>
+                <div class="fruit-level">
+                    <div class="fruit-circle grape">🍇</div>
+                    <span>ぶどう</span>
+                </div>
+                <div class="fruit-level">
+                    <div class="fruit-circle orange">🍊</div>
+                    <span>みかん</span>
+                </div>
+                <div class="fruit-level">
+                    <div class="fruit-circle apple">🍎</div>
+                    <span>りんご</span>
+                </div>
+                <div class="fruit-level">
+                    <div class="fruit-circle watermelon">🍉</div>
+                    <span>スイカ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
